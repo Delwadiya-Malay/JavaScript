@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function patterns(n) {
+        //  TASK-1
+        // for (let i = 0; i < n; i++) {
+        //   for (let j = 0; j < n; j++) {
+        //     if (i === j || i + j === n - 1) {
+        //       document.write("*&nbsp;");
+        //     } else {
+        //       document.write("&nbsp;&nbsp;&nbsp;");
+        //     }
+        //   }
+        //   document.write("</br>");
+        // }
+        // }
+        // let n = prompt("Please enter count ...");
+        // patterns(n);
+
+        //  TASK-2
+        //     for (let i = 1; i <= n; i++) {
+        //       for (let j = 1; j <= m; j++) {
+        //         if (i == 1 || j == 1 || i == n || j == m) {
+        //           document.write("&nbsp*");
+        //         } else {
+        //           document.write("&nbsp&nbsp&nbsp");
+        //         }
+        //       }
+        //       document.write("</br>");
+        //     }
+        //   }
+        //   let n = prompt("Please enter row count ...");
+        //   let m = prompt("Please enter column count...");
+        //   patterns(n, m);
+
+        // TASK-4
+        //     let i, j;
+        //     for (i = 0; i < n; i++) {
+        //       for (j = 0; j < i; j++) {
+        //         document.write("*&nbsp");
+        //       }
+        //       document.write("</br>");
+        //     }
+
+        //     for (i = 0; i <= n - 1; i++) {
+        //       for (j = 0; j < n - i; j++) {
+        //         document.write("*&nbsp");
+        //       }
+        //       document.write("</br>");
+        //     }
+        //   }
+        //   let n = prompt("Please enter count ...");
+        //   patterns(n);
+
+        // TASK-3
+        for (let i = 0; i < n; i++) {
+          for (let j = n - i - 1; j > 0; j--) {
+            document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+          }
+          for (let k = 0; k < i; k++) {
+            if (k == 0 || k == i - 1) {
+              document.write("*&nbsp;&emsp;");
+            } else {
+              document.write("&emsp;&emsp;");
+            }
+          }
+          document.write("</br>");
+        }
+
+        for (let i = 0; i < n - 1; i++) {
+          for (let j = 0; j < i + 1; j++) {
+            document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+          }
+          for (let k = n - 2; k > i; k--) {
+            if (k == n - 2 || k == i) {
+              document.write("* &nbsp;&emsp;");
+            } else {
+              document.write("&nbsp;");
+            }
+          }
+          document.write("</br>");
+        }
+      }
+      let n = prompt("Please enter count ...");
+      patterns(n);
+    </script>
+  </body>
+</html>
